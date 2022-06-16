@@ -1,6 +1,11 @@
 const removeFromArray = function (array, element) {
-    let position = array.indexOf(element);
-    array.splice(position, 1);
+    for (i = 1; i < arguments.length; i++) {
+        let position = array.indexOf(arguments[i]);
+        if (position == -1) {
+            continue;
+        }
+        array.splice(position, 1);
+    }
     return array;
 };
 
